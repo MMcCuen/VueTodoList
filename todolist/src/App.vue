@@ -1,11 +1,36 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <Todos v-bind:todos="todos" />
+  </div>
 </template>
 
 <script>
+import Todos from "./components/Todos";
+
 export default {
   name: "App",
-  components: {},
+  components: { Todos },
+  data() {
+    return {
+      todos: [
+        {
+          id: 1,
+          title: "Todo One",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Todo two",
+          completed: true,
+        },
+        {
+          id: 3,
+          title: "Todo 3",
+          completed: false,
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -20,3 +45,4 @@ body {
   line-height: 1.4;
 }
 </style>
+
